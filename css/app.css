@@ -1,0 +1,12 @@
+#catName1, #catName2 {
+	text-decoration: underline;
+}
+
+#catPic, #catPic2 {
+	border: 3px double grey;
+	border-radius: 3px;
+	position:static;
+}
+#catPic:hover,#catPic2:hover{
+	cursor: pointer;
+}
