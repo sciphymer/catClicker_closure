@@ -1,12 +1,22 @@
-#catName1, #catName2 {
+.catlistmenu {
+	width:100px;
+	height:300px;
+	position: asbolute;
+	color: #FFD800FF;
+	font-size: 20px;
+}
+
+#catName {
 	text-decoration: underline;
 }
 
-#catPic, #catPic2 {
+#catPic {
 	border: 3px double grey;
 	border-radius: 3px;
 	position:static;
+	width:400px;
+	heigth:auto;
 }
-#catPic:hover,#catPic2:hover{
+#catPic:hover{
 	cursor: pointer;
 }

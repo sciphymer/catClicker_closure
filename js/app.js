@@ -1,19 +1,33 @@
-let counter = 0;
-let catName1 = "Sleepy";
-let catName2 = "Sunny";
-// let likedCount = document.getElementById('likedCount');
-const catPic = document.getElementById('catPic');
-document.getElementById('catName1').textContent = catName1 ;
-catPic.addEventListener('click', function(){
-   counter++;
-   document.getElementById('likedCount').textContent = counter;
-}, false);
 
-let counter2 = 0;
-// let likedCount = document.getElementById('likedCount');
-const catPic2 = document.getElementById('catPic2');
-document.getElementById('catName2').textContent = catName2 ;
-catPic2.addEventListener('click', function(){
-   counter2++;
-   document.getElementById('likedCount2').textContent = counter2;
-}, false);
+let catList = ["Sleepy","Sunny","Cutey","Licky","Lazy"];
+const menu = document.getElementById('catlistmenu');
+const catName = document.getElementById('catName');
+const catPic = document.getElementById('catPic');
+const likedCount = document.getElementById('likedCount');
+const imgPath = "img/";
+let allCats=[];
+
+function Cat(name) {
+	this.name = name;
+	this.counter = 0;
+	this.img = imgPath + name.toLowerCase() + ".jpg";
+}
+
+var menulist = document.createElement('ul');
+
+catList.forEach(function(cat,index){
+	allCats.push(new Cat(cat));
+	var item = document.createElement('li');
+	item.textContent = allCats[index].name;
+	menulist.appendChild(item);
+	menu.appendChild(menulist);
+	item.addEventListener('click', function(){
+		catName.textContent = allCats[index].name;
+		catPic.setAttribute("src",allCats[index].img);
+		likedCount.textContent = allCats[index].counter;
+
+		catPic.addEventListener('click', function(){
+				likedCount.textContent = allCats[index].counter++;
+		});
+	});
+});
