@@ -26,8 +26,11 @@ catList.forEach(function(cat,index){
 		catPic.setAttribute("src",allCats[index].img);
 		likedCount.textContent = allCats[index].counter;
 
-		catPic.addEventListener('click', function(){
-				likedCount.textContent = allCats[index].counter++;
-		});
+// 		catPic.addEventListener('click', function(){
+// 				likedCount.textContent = allCats[index].counter++;
+// 		});
+		catPic.addEventListener('click', (function(i_cat){
+           	 		likedCount.textContent = i_cat[index].counter++;
+        	})(allCats));
 	});
 });
