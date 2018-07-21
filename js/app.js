@@ -30,7 +30,9 @@ catList.forEach(function(cat,index){
 // 				likedCount.textContent = allCats[index].counter++;
 // 		});
 		catPic.addEventListener('click', (function(i_cat){
-           	 		likedCount.textContent = i_cat[index].counter++;
-        	})(allCats));
+			return function(){
+				likedCount.textContent = i_cat[index].counter++;
+			};
+		})(allCats));
 	});
 });
